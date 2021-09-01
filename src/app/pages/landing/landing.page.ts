@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPage implements OnInit {
 
-  constructor() { }
+  have_account: boolean = true;
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  goToRegister(){
+    this.have_account = !this.have_account;
   }
 
 }
