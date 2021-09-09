@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { v4 } from 'uuid';
+import { PusherService } from 'src/app/providers/pusher.service';
 
 interface Message {
   id: string;
@@ -8,7 +9,6 @@ interface Message {
   timeStamp: Date;
   type: string;
 }
-
 @Component({
   selector: 'chat',
   templateUrl: './chat.component.html',
@@ -16,13 +16,24 @@ interface Message {
 })
 export class ChatComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private pusher: PusherService) { }
 
   messages: Array<Message> = [];
   message: string = '';
   lastMessageId;
 
-  ngOnInit() {}
+  ngOnInit() {
+    const channel = this.pusher.init();
+        channel.bind('message', (data) => {
+          if (data.id !== this.lastMessageId) {
+            const message: Message = {
+              ...data,
+              type: 'incoming',
+            };
+            this.messages = this.messages.concat(message);
+          }
+        });
+  }
 
   sendMessage() {
     if (this.message !== '') {

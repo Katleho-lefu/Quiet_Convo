@@ -12,6 +12,7 @@ import { ChatPageRoutingModule } from './pages/chat/chat-routing.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PusherService } from './providers/pusher.service';
 
 
 
@@ -28,6 +29,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
               HttpClient,
+              PusherService,
             ],
   bootstrap: [AppComponent],
 })
