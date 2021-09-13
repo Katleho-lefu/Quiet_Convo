@@ -49,25 +49,32 @@
         }
       }
 
+      
+    }
+
+    .type{
+      display: flex;
+      flex-direction: column;
+      align-items:center;
     }
 
     .input-area {
         position: absolute;
-        bottom: 1px;
-        left: 0;
-        width: 100%;
+        bottom:20px;
+        width: 80%;
         height: 50px;
-        background: white;
+        background: var(--other-speech);
+        border-radius: 25px;
         form {
           display: flex;
           height: 100%;
+          padding: 4%;
           
           ion-input {
             width: 82%;
             border: none;
-            padding: 5px 10px;
             color: #8a898b;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: bold;
             font-family: 'Titillium Web', sans-serif;
             background: inherit;
