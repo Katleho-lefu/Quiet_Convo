@@ -16,8 +16,10 @@ interface Message {
 })
 export class ChatComponent implements OnInit {
 
+  
   constructor(private http: HttpClient, private pusher: PusherService) { }
 
+  typed: boolean= false;
   messages: Array<Message> = [];
   message: string = '';
   lastMessageId;
@@ -33,7 +35,15 @@ export class ChatComponent implements OnInit {
             this.messages = this.messages.concat(message);
           }
         });
+
+    //check if there's text yet in order to choose betwwen "send text" or "record" icons
+    if(this.message){
+      this.typed== !this.typed
+    }
+
   }
+
+  
 
   sendMessage() {
     if (this.message !== '') {

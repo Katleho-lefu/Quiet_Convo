@@ -14,7 +14,11 @@
         <form (submit)="sendMessage()" name="messageForm" #messageForm="ngForm">
           <ion-input type="text" name="message" id="message" [(ngModel)]="message" placeholder="Say something simple..."></ion-input>
           <button>
-            <ion-icon name="send"></ion-icon>
+            <ion-icon name="navigate-circle" *ngIf="typed; else record"></ion-icon>
+            <!-- OR -->
+            <ng-template #record>
+              <ion-icon name="videocam"></ion-icon>
+            </ng-template>
           </button>
         </form>
       </div>
