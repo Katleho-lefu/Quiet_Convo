@@ -1,4 +1,4 @@
-.main {
+.page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
       width: 100%;
       height: 100%;
       position: relative;
-      background: #f9fbfc;
+      background: var(--bg-color);
       .message-area {
         max-height: 90%;
         height: 90%;
@@ -15,16 +15,16 @@
         padding: 15px 10px;
         .message {
           p {
-            color: #8a898b;
+            color: whitesmoke;
             font-size: 13px;
             font-weight: bold;
             margin: 0px;
-            max-width: 95%;
+            max-width: 80%;
             min-width: 55%;
             box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
             padding: 10px 15px 10px 7px;
             margin: 5px 0;
-            background: white;
+            background: var(--my-speech);
           }
         }
         .message.incoming {
@@ -35,7 +35,7 @@
           p {
             color: white;
             border-radius: 0 11px 11px 11px;
-            background: #B9C0E9;
+            background: var(--other-speech);
           }
         }
         .message.outgoing {
@@ -48,13 +48,7 @@
           }
         }
       }
-      .emo-area {
-        position: absolute;
-        bottom: 50px;
-        left: 0;
-        width: 100%;
-        padding: 3px 10px;
-      }
+
     }
 
     .input-area {
