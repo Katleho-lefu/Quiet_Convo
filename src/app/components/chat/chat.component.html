@@ -1,5 +1,10 @@
 
 <div class="page">
+  <div class="nav">
+    <ion-icon name="arrow-back"></ion-icon>
+    <h4 class="mt-2">Friend</h4>
+    <img src="https://i.pinimg.com/474x/bc/68/a2/bc68a2a45cd7743d75a0f15e58a46b1b.jpg" alt="...">
+  </div>
   <div class="chat-box">
     <div class="message-area">
       <div class="message" *ngFor="let message of messages" [ngClass]="getClasses(message.type)">

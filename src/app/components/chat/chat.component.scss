@@ -1,5 +1,6 @@
 .page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -85,7 +86,7 @@
           button {
             width: 18%;
             border: none;
-            color: #8a898b;
+            color: var(--btn-color);
             opacity: 0.9;
             display: flex;
             justify-content: center;
@@ -98,4 +99,28 @@
           }
         }
       }
+
+      .nav{
+        background-color: red;
+        color: var(--text);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        height: 70px;
+        width: 100%;
+        z-index: -1;
+
+        ion-icon{
+          font-size: 2rem;
+        }
+
+        img{
+          border: 3px solid #ddd;	/* thickness and color of border */
+          width: 40px;				/* width of image (px or % or auto) */
+          height: 40px;	
+          border-radius: 50%;
+        }
+    }
   }

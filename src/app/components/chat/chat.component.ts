@@ -19,7 +19,7 @@ export class ChatComponent implements OnInit {
   
   constructor(private http: HttpClient, private pusher: PusherService) { }
 
-  typed: boolean= false;
+  typed: boolean= true;
   messages: Array<Message> = [];
   message: string = '';
   lastMessageId;
