@@ -2,8 +2,8 @@
 <div class="page">
   <div class="nav">
     <ion-icon name="arrow-back"></ion-icon>
-    <h4 class="mt-2">Friend</h4>
-    <img src="https://i.pinimg.com/474x/bc/68/a2/bc68a2a45cd7743d75a0f15e58a46b1b.jpg" alt="...">
+    <h4 class="mt-2 something">Friend</h4>
+    <img src="https://i.pinimg.com/474x/af/9f/1f/af9f1fed99621ae20f9edd2ab6cbb8bd.jpg" alt="...">
   </div>
   <div class="chat-box">
     <div class="message-area">
@@ -19,7 +19,7 @@
         <form (submit)="sendMessage()" name="messageForm" #messageForm="ngForm">
           <ion-input type="text" name="message" id="message" [(ngModel)]="message" placeholder="Say something simple..."></ion-input>
           <button>
-            <ion-icon name="navigate-circle" *ngIf="typed; else record"></ion-icon>
+            <ion-icon class="bton"name="navigate-circle" *ngIf="message; else record"></ion-icon>
             <!-- OR -->
             <ng-template #record>
               <ion-icon name="videocam"></ion-icon>

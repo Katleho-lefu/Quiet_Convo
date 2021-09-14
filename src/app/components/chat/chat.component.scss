@@ -93,16 +93,24 @@
             align-items: center;
             cursor: pointer;
             background: inherit;
+            
             ion-icon {
               font-size: 3rem;
             }
+            
           }
         }
       }
 
       .nav{
-        background-color: red;
+        background-color: var(--bg-color);
         color: var(--text);
+
+        .something{
+          font-size: 20px;
+        font-weight: bold;
+        font-family: 'Titillium Web', sans-serif;
+        }
         display: flex;
         flex-direction: row;
         align-items: center;
