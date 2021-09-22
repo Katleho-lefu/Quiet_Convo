@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { v4 } from 'uuid';
 import { PusherService } from 'src/app/providers/pusher.service';
+import {Location} from '@angular/common';
 
 interface Message {
   id: string;
@@ -17,7 +18,7 @@ interface Message {
 export class ChatComponent implements OnInit {
 
   
-  constructor(private http: HttpClient, private pusher: PusherService) { }
+  constructor(private http: HttpClient, private pusher: PusherService, private location: Location) { }
 
   messages: Array<Message> = [];
   message: string = '';
@@ -34,10 +35,9 @@ export class ChatComponent implements OnInit {
             this.messages = this.messages.concat(message);
           }
         });
-
   }
 
-  
+
 
   sendMessage() {
     if (this.message !== '') {
@@ -70,5 +70,10 @@ export class ChatComponent implements OnInit {
       outgoing: messageType === 'outgoing',
     };
   }
+
+  //back to previous page
+	back() {
+		this.location.back();
+	  }
 
 }

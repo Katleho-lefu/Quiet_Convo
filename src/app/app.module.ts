@@ -16,6 +16,7 @@ import { PusherService } from './providers/pusher.service';
 
 
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,7 +26,8 @@ import { PusherService } from './providers/pusher.service';
             LandingPageModule, 
             LandingPageRoutingModule,
             ChatPageModule,
-            ChatPageRoutingModule],
+            ChatPageRoutingModule,
+          ],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
               HttpClient,
