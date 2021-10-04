@@ -1,0 +1,39 @@
+.page{
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--text);
+
+    .txt{
+        font-size: 15px;
+        font-weight: bold;
+        font-family: 'Titillium Web', sans-serif;
+    }
+    
+    .nav{
+        background-color: var(--bg-color);
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        height: 60px;
+        width: 100%;
+        z-index: -1;
+
+        ion-icon{
+          font-size: 2rem;
+        }
+
+        
+    }
+
+    img{
+          width: 60px;
+          height: 60px;	
+          border-radius: 50%;
+        }
+
+    
+
+}
