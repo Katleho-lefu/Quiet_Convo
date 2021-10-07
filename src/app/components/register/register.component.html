@@ -2,19 +2,19 @@
   <h4 class="text-center register">Register</h4>
   <div class="mb-3">
     <label for="exampleInputUsername1" class="form-label">Username</label>
-    <input type="username" class="form-control" id="exampleInputUsername1" placeholder="provide your username">
+    <input type="username" class="form-control" id="exampleInputUsername1" placeholder="provide your username" [(ngModel)]="credentials.username" [ngModelOptions]="{standalone: true}">
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="provide your email">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@gmail.com" [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="provide your password">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="provide your password" [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}">
   </div>
 
   <div class="row justify-content-center som">
-    <button class="mt-3" type="submit"><h5>register</h5></button>
+    <button class="mt-3" type="submit" (click)="register()"><h5>register</h5></button>
   </div>
 </form>

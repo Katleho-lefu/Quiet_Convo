@@ -1,3 +1,4 @@
+import { Login } from './../../interfaces/user.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,8 +11,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  email: "";
-  password: "";
+  credentials : Login = {
+    email: "",
+    password: "",
+  }
+
 
   constructor(private authService: AuthService) { }
 
@@ -19,7 +23,10 @@ export class LoginComponent implements OnInit {
 
   //login method
   login(){
-    this.authService.login(this.email, this.password)
+    this.authService.login(this.credentials)
+    console.log(this.credentials.email);
+    
+    
   }
 
 }
