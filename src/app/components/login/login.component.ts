@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
     email: "",
     password: "",
   }
+  
+  dont_have_account: boolean = false;
+  wrong_credentials: boolean = false;
 
 
   constructor(private authService: AuthService) { }
@@ -23,10 +26,22 @@ export class LoginComponent implements OnInit {
 
   //login method
   login(){
-    this.authService.login(this.credentials)
-    console.log(this.credentials.email);
-    
-    
+    this.authService.login(this.credentials).subscribe((res: any) => {
+      // check if either credential is wrong
+      if(res.email!==this.credentials.email || res.password!== this.credentials.password){
+        this.wrong_credentials = !this.wrong_credentials;
+      }
+      // check if both email AND password are wrong
+      else if(this.credentials.email!==res.email && this.credentials.password!==res.password){
+        this.dont_have_account = !this.dont_have_account;
+      }
+      console.log(res);
+		},
+
+		(err: any) => {
+      console.log(err.status);
+		}
+		)
   }
 
 }

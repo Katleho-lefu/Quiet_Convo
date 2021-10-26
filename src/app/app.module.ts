@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PusherService } from './providers/pusher.service';
+// import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -27,6 +28,7 @@ import { PusherService } from './providers/pusher.service';
             LandingPageRoutingModule,
             ChatPageModule,
             ChatPageRoutingModule,
+            // ToastrModule.forRoot(),
           ],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

@@ -2,21 +2,27 @@ import { Login, Register } from './../interfaces/user.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
+
+
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class AuthService {
 
-  URL = "localhost:3001/auth";
-  constructor( private http: HttpClient) { }
+	url: string = 'http://localhost:3001';
+	constructor( private http: HttpClient) { }
 
-  //login method
-  login( credentials: Login){
-    console.log('something');
-  }
+	//register method
+	register(credentials: Register){    
+		return  this.http.post(`${this.url}/auth/register/`, credentials)
+	}
 
-  register(credentials: Register){
-    console.log(credentials);
-  }
+	//login method
+	login( credentials: Login){
+		return  this.http.post(`${this.url}/auth/login/`, credentials)
+	}
+
+	
 
 }
